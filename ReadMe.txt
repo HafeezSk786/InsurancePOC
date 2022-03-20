@@ -5,7 +5,7 @@ and add an employee to db.
 3) FrontEnd Folder: This folder contains the Angular 13 project which contains the  front end logic to display the data 
 from web api.
 
-I am not check in the "node_modules" folder. So I would request the team to do the following:
+I am not checking in the "node_modules" folder. So I would request the team to do the following:
 
 a) Go to the copied angular directory.
 b) run "npm install" to get all the node_modules
