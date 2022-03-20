@@ -40,7 +40,6 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    alert("inside submit");
     var formData: any = new FormData();
     formData.append('name', this.form.get('name')?.value);
     formData.append('age', this.form.get('age')?.value);
