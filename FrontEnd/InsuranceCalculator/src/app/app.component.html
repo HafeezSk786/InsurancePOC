@@ -1,0 +1,50 @@
+    <div class="p-3 mb-2 bg-secondary text-white"></div>
+    <div class="container">
+      <h3 class="container  text-center mt-5 mb-5">Insurance Premium Calculator</h3>
+    
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName = "name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <div class="form-group">
+            <input type="age" class="form-control" formControlName = "age">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <div class="form-group">
+            <input type="dob" class="form-control" formControlName = "dob">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="occupation">Select Occupation:</label>
+          <select [(ngModel)]="occupationList[0]" formControlName="occupation" class="form-control" (change)="selectChangeHandler($event)"> 
+            <option *ngFor="let item of occupationList">{{item}}</option>
+          </select>
+      </div>
+        <div class="form-group">
+          <label for="suminsured">Death-Sum Insured</label>
+          <div class="form-group">
+            <input type="suminsured" class="form-control" formControlName = "suminsured">
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </div>
+      </form>
+
+      <div *ngIf="employee.insurancePremiumAmount!=null">
+        <label>Your Monthly Insurance premium amount is {{employee.insurancePremiumAmount}}</label>
+      </div>
+      
+      <div *ngIf="employee.insurancePremiumAmount!=null">
+        <label>{{employee | json}}</label>
+      </div>
+
+  </div>
+  
