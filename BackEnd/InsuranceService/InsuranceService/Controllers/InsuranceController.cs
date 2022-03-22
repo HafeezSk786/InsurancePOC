@@ -23,17 +23,21 @@ namespace InsuranceService.Controllers
             _logger = logger;
         }
 
-        [Route("GetEmp")]
+        //[Route("GetEmp")]
         [HttpGet]
-        public async Task<string> GetEmployees()
+        public async Task<ActionResult<List<Employee>>> Get()
         {
             try
             {
-                return "testing";
+                using (var _context = new InsuranceContext())
+                {
+                    var query = _context.Employee.ToList();
+                    return query;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return "error";
+                return BadRequest();
             }
         }
 
